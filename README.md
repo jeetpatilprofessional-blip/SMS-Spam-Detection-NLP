@@ -1,29 +1,70 @@
-# NLP-Project-1---Build-Spam-Ham-Classifier-Application
+# SMS Spam Detection using NLP
 
-Join me in this NLP Project series as we build a Spam or Ham Classifier App using Streamlit! Here's a quick breakdown of what you'll learn:
+An NLP-based SMS classification application that predicts whether a text message is **Spam** or **Ham (Legitimate)** using a trained machine-learning model and an interactive Streamlit interface.
 
-- 📚 NLP Introduction: Dive into the world of Natural Language Processing (NLP) fundamentals.
-- 📊 TF-IDF: Master Term Frequency-Inverse Document Frequency (TF-IDF) for text analysis.
-- 📁 Data Handling: Learn efficient data loading and visualization techniques.
-- 🤖 Model Creation: Build a powerful classifier model tailored to your data.
-- 💾 Model Management: Discover how to save and load your trained model.
-- 🚀 Streamlit App: Create an interactive web app for real-time classification.
+## Features
+- Classifies user-entered SMS messages as Spam or Ham
+- Simple interactive interface built with Streamlit
+- Uses a saved machine-learning model (`model.pkl`)
+- Lightweight deployment and local execution
 
-**YouTube Video Link**
-https://youtu.be/X_Ts7VhHgEU
+## Tech Stack
+- Python
+- Streamlit
+- Scikit-learn
+- Pickle (model serialization)
 
+## Repository Structure
+```
+SMS-Spam-Detection-NLP/
+├── app.py
+├── model.pkl
+├── requirements.txt
+└── README.md
+```
 
-# Important-Announcement-on-ML
-<a href='http://www.kgptalkie.com' target="_blank"> <img src='https://github.com/laxmimerit/Important-Announcement-on-ML/blob/master/kgptalkie_strips.png'/></a>
+## Run the application locally
 
-# ML Resources
-|  ML Course | Description |
-|:---|:---|
-| [**Data Visualization in Python Masterclass™: Beginners to Pro**](https://bit.ly/udemy95off_kgptalkie) |  Learn to build Machine Learning and Deep Learning models using Python and its libraries like Scikit-Learn, Keras, and TensorFlow. |
-| [**Python for Machine Learning: A Step-by-Step Guide**](https://bit.ly/ml-ds-project) | Learn to build Machine Learning and Deep Learning models using Python and its libraries like Scikit-Learn, Keras, and TensorFlow. |
-| [**Python for Linear Regression in Machine Learning**](https://bit.ly/regression-python) | Learn to build Linear Regression models using Python and its libraries like Scikit-Learn. |
-| [**Introduction to Spacy 3 for Natural Language Processing**](https://bit.ly/spacy-intro) | Learn to build Natural Language Processing models using Python and its libraries like Spacy. |
-| [**Advanced Machine Learning and Deep Learning Projects**](https://bit.ly/kgptalkie_ml_projects) | Learn to build Advanced Machine Learning and Deep Learning models using Python and transformer models like BERT, GPT-2, and XLNet. |
-| [**Natural Language Processing in Python for Beginners**](https://bit.ly/intro_nlp) | Learn to build Natural Language Processing Projects using Spacy, NLTK, and Gensim, and transformer models like BERT, GPT-2, and XLNet. |
-| [**Deployment of Machine Learning Models in Production in Python**](https://bit.ly/bert_nlp) |  Learn to deploy Machine Learning and Deep Learning models using Python and its libraries like Flask, Streamlit, and NGINX. |
-| [**R 4.0 Programming for Data Science - Beginners to Pro**](https://bit.ly/r4-ml) | Learn to build Machine Learning and Deep Learning models using R and its libraries like caret, tidyverse, and keras. |
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jeetpatilprofessional-blip/SMS-Spam-Detection-NLP.git
+   cd SMS-Spam-Detection-NLP
+   ```
+
+2. (Optional but recommended) Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   ```
+   Windows:
+   ```bash
+   venv\\Scripts\\activate
+   ```
+   macOS/Linux:
+   ```bash
+   source venv/bin/activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Launch Streamlit:
+   ```bash
+   streamlit run app.py
+   ```
+
+## How it works
+1. Enter a message in the text box.
+2. Click **Predict**.
+3. The saved model classifies the message.
+4. The app displays a Spam or Ham result.
+
+## Project Scope & Future Improvements
+- Add model evaluation (precision, recall, F1-score and confusion matrix).
+- Compare multiple classification algorithms.
+- Document preprocessing and model-training workflow in a notebook.
+- Add screenshots and a more detailed dataset description.
+
+## Disclaimer
+This project is for educational and portfolio purposes. Predictions may be incorrect; do not rely on the classifier for sensitive decisions.
