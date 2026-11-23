@@ -33,7 +33,7 @@ SMS-Spam-Detection-NLP/
    python -m venv venv
    ```
    Windows: `venv\\Scripts\\activate`
-   
+
    macOS/Linux: `source venv/bin/activate`
 3. Install:
    ```bash
@@ -45,9 +45,9 @@ SMS-Spam-Detection-NLP/
    ```
 
 ## Train and evaluate
-The notebook `SMS_Spam_Training_Evaluation.ipynb` demonstrates dataset loading, label preparation, train/test splitting, TF-IDF vectorization, Multinomial Naive Bayes training, metrics and confusion-matrix plotting, and saving the complete pipeline as `model.pkl`.
+The notebook `SMS_Spam_Training_Evaluation.ipynb` demonstrates loading and cleaning data, exploring label distribution, train/test splitting, TF-IDF vectorization, Multinomial Naive Bayes training, metrics and confusion-matrix plotting, and saving the complete pipeline as `model.pkl`.
 
-**Dataset prerequisite:** The notebook expects the SMS Spam Collection CSV named `spam.csv` with columns `v1` (label) and `v2` (message). The dataset is not currently included in this repository. Download it from a reputable source and place it beside the notebook before running.
+**Dataset prerequisite:** Place the tab-separated file `spam.tsv` (containing `label` and `message` columns) beside the notebook. The notebook uses `pd.read_csv('spam.tsv', sep='\\t')`. The dataset is not included in this repository.
 
 Run every notebook cell to generate a new `model.pkl`. The notebook's pipeline is designed to accept raw message strings, matching the app's prediction call.
 
