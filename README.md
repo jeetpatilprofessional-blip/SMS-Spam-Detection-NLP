@@ -105,11 +105,6 @@ Results reported for the held-out test split from the documented local run:
 
 See [TESTING_REPORT.md](TESTING_REPORT.md) for the additional reported metrics and smoke-test notes. Spam recall is lower than overall accuracy, so some spam messages may be missed.
 
-## Visualizations
-
-- `label_distribution.png` — class distribution in the dataset
-- `confusion_matrix.png` — model classification results on the test split
-
 ## Limitations and safety
 
 The model may incorrectly classify messages. Do not use its predictions as the sole basis for sensitive or consequential decisions. Only load pickle files from trusted sources.
