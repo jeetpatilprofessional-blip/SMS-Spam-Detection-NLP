@@ -75,6 +75,16 @@ SMS-Spam-Detection-NLP/
    streamlit run app.py
    ```
 
+## Deploy the app on Streamlit Community Cloud
+
+1. Visit [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with GitHub.
+2. Click **Create app**.
+3. Select this repository: `jeetpatilprofessional-blip/SMS-Spam-Detection-NLP`.
+4. Choose branch `main` and entrypoint file `app.py`.
+5. Click **Deploy** and wait for the build to finish.
+
+The app uses `requirements.txt` and the included `model.pkl`. No secrets are required.
+
 ## Model training
 
 The `SMS_Spam_Training_Evaluation.ipynb` notebook contains the reproducible training workflow:
