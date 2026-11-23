@@ -30,7 +30,6 @@ SMS-Spam-Detection-NLP/
 ├── spam.tsv
 ├── requirements.txt
 ├── SMS_Spam_Training_Evaluation.ipynb
-├── Spam Text Classification.ipynb
 ├── confusion_matrix.png
 ├── label_distribution.png
 ├── TESTING_REPORT.md
