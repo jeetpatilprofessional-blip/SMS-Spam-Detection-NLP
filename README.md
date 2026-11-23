@@ -6,7 +6,8 @@ An NLP-based SMS classification application that predicts whether a text message
 - Classifies messages as Spam or Ham
 - Streamlit interactive app
 - Saved preprocessing + model pipeline (`model.pkl`)
-- Training and evaluation notebook provided
+- Training and evaluation notebook
+- Test metrics and testing report
 
 ## Tech Stack
 Python • Streamlit • Scikit-learn • Pandas • NumPy • TF-IDF
@@ -16,8 +17,10 @@ Python • Streamlit • Scikit-learn • Pandas • NumPy • TF-IDF
 SMS-Spam-Detection-NLP/
 ├── app.py
 ├── model.pkl
+├── spam.tsv (local dataset; not committed)
 ├── requirements.txt
 ├── SMS_Spam_Training_Evaluation.ipynb
+├── TESTING_REPORT.md
 ├── .gitignore
 └── README.md
 ```
@@ -45,17 +48,17 @@ SMS-Spam-Detection-NLP/
    ```
 
 ## Train and evaluate
-The notebook `SMS_Spam_Training_Evaluation.ipynb` demonstrates loading and cleaning data, exploring label distribution, train/test splitting, TF-IDF vectorization, Multinomial Naive Bayes training, metrics and confusion-matrix plotting, and saving the complete pipeline as `model.pkl`.
+The notebook `SMS_Spam_Training_Evaluation.ipynb` loads `spam.tsv` (tab-separated), cleans the data, explores class distribution, performs a stratified train/test split, trains a TF-IDF + Multinomial Naive Bayes pipeline, evaluates the model, and saves the pipeline as `model.pkl`.
 
-**Dataset prerequisite:** Place the tab-separated file `spam.tsv` (containing `label` and `message` columns) beside the notebook. The notebook uses `pd.read_csv('spam.tsv', sep='\\t')`. The dataset is not included in this repository.
+Place `spam.tsv` beside the notebook. The file should contain `label` and `message` columns. The dataset itself is not included in this repository.
 
-Run every notebook cell to generate a new `model.pkl`. The notebook's pipeline is designed to accept raw message strings, matching the app's prediction call.
+## Results from a local run
+- **Accuracy:** 96.23%
+- **Ham F1-score:** 97.87%
+- **Spam F1-score:** 83.59%
+- **Spam recall:** 71.81%
 
-## Evaluation
-Run the notebook to produce your own Accuracy, Precision, Recall, F1-score and confusion matrix. No results are published here until the notebook has been executed.
-
-## Screenshots
-Screenshots of the Streamlit application and evaluation results are not yet included.
+See [TESTING_REPORT.md](TESTING_REPORT.md) for the complete report. Spam recall is lower than overall accuracy; the classifier misses some spam messages, so accuracy alone is not sufficient to evaluate it.
 
 ## Limitations
 This model may misclassify messages. Do not rely on its predictions for sensitive or consequential decisions. Only load pickle model files from trusted sources.
