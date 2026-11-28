@@ -2,14 +2,27 @@
 
 An end-to-end NLP classification project that predicts whether an SMS message is **Spam** or **Ham (legitimate)**. The text-processing and classification steps are bundled into a saved Scikit-learn pipeline and served through an interactive Streamlit app.
 
+## Application Screenshots
+
+### Streamlit application interface
+![SMS Spam Detector interface](Interface/SMS%20Interface.png)
+
+### Spam message prediction
+![SMS Spam Detector - Spam prediction](Interface/Prediction%201.webp)
+
+### Ham (legitimate) message prediction
+![SMS Spam Detector - Ham prediction](Interface/Prediciton%202.png)
+
+The screenshots demonstrate the app interface and example classifications for one spam-style promotional message and one ordinary conversational message. These are sample demonstrations; model predictions can be incorrect.
+
 ## Features
 
-- Interactive SMS classification app
-- TF-IDF text representation using unigrams and bigrams
-- Multinomial Naive Bayes classifier
-- Saved preprocessing + model pipeline (`model.pkl`)
-- Training and evaluation notebook
-- Dataset, evaluation plots, and testing report
+- Interactive SMS classification app built with Streamlit.
+- TF-IDF text representation using unigrams and bigrams.
+- Multinomial Naive Bayes classifier.
+- Saved preprocessing and model pipeline (`model.pkl`).
+- Training and evaluation notebook.
+- Dataset, evaluation plots, testing report, and application screenshots.
 
 ## Tech Stack
 
@@ -25,6 +38,12 @@ An end-to-end NLP classification project that predicts whether an SMS message is
 
 ```
 SMS-Spam-Detection-NLP/
+├── Interface/
+│   ├── SMS Interface.png
+│   ├── Prediction 1.webp
+│   └── Prediciton 2.png
+├── .streamlit/
+│   └── config.toml
 ├── app.py
 ├── model.pkl
 ├── spam.tsv
@@ -33,10 +52,10 @@ SMS-Spam-Detection-NLP/
 ├── confusion_matrix.png
 ├── label_distribution.png
 ├── TESTING_REPORT.md
-└── .gitignore
+└── README.md
 ```
 
-## Run locally
+## Run Locally
 
 1. Clone this repository and enter the folder:
 
@@ -48,19 +67,19 @@ SMS-Spam-Detection-NLP/
 2. Create and activate a virtual environment (recommended):
 
    ```bash
-   python -m venv venv
+   python -m venv .venv
    ```
 
-   Windows:
+   **Windows PowerShell:**
 
-   ```bash
-   venv\Scripts\activate
+   ```powershell
+   .venv\Scripts\Activate.ps1
    ```
 
-   macOS/Linux:
+   **macOS/Linux:**
 
    ```bash
-   source venv/bin/activate
+   source .venv/bin/activate
    ```
 
 3. Install the requirements:
@@ -75,7 +94,7 @@ SMS-Spam-Detection-NLP/
    streamlit run app.py
    ```
 
-## Deploy the app on Streamlit Community Cloud
+## Deploy on Streamlit Community Cloud
 
 1. Visit [Streamlit Community Cloud](https://share.streamlit.io/) and sign in with GitHub.
 2. Click **Create app**.
@@ -85,7 +104,7 @@ SMS-Spam-Detection-NLP/
 
 The app uses `requirements.txt` and the included `model.pkl`. No secrets are required.
 
-## Model training
+## Model Training
 
 The `SMS_Spam_Training_Evaluation.ipynb` notebook contains the reproducible training workflow:
 
@@ -100,7 +119,7 @@ The `SMS_Spam_Training_Evaluation.ipynb` notebook contains the reproducible trai
 
 The dataset is included. The notebook expects the fields `label` and `message`; additional columns are ignored.
 
-## Reported evaluation
+## Reported Evaluation
 
 The documented held-out test run reported:
 
